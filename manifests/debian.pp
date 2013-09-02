@@ -11,7 +11,7 @@ class pound::debian inherits pound::base {
      notify  => Service['pound']
   }
 
-  service {'pound':
+  Service['pound'] {
     pattern => '/usr/sbin/pound',
     restart => '/etc/init.d/pound reload',
   }
