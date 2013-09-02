@@ -5,13 +5,13 @@
 #
 class pound::debian inherits pound::base {
 
-  File['pound-default'] {
+  file {'pound-default':
      ensure  => file,
      content => template("pound/defaults.erb"),
      notify  => Service['pound']
   }
 
-  Service['pound'] {
+  service {'pound':
     pattern => '/usr/sbin/pound',
     restart => '/etc/init.d/pound reload',
   }
