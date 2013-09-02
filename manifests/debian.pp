@@ -16,5 +16,5 @@ class pound::debian inherits pound::base {
     restart => '/etc/init.d/pound reload',
   }
 
-  File['pound-default'] -> Service['pound']
+  File['/etc/default/pound'] -> Service['pound']
 }
