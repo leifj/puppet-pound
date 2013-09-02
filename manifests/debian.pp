@@ -5,7 +5,7 @@
 #
 class pound::debian inherits pound::base {
 
-  file {'pound-default':
+  file {'/etc/default/pound':
      ensure  => file,
      content => template("pound/defaults.erb"),
      notify  => Service['pound']
