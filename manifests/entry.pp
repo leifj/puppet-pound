@@ -5,7 +5,7 @@ define pound::entry ($listen_ip,
     $head_require,
     $backend_ip,
     $backend_port,
-    $cert = "/etc/ssl/certs/server.pem") {
+    $certs = ["/etc/ssl/certs/server.pem"]) {
 
 
     concat::fragment {
