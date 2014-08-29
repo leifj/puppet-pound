@@ -23,6 +23,7 @@ class pound::base {
             ensure => running,
             enable => true,
             require => Package['pound'],
+            hasrestart => true
     }
     concat::fragment {
         'pound_header' :
